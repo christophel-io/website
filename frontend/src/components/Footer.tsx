@@ -40,7 +40,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-purple-800 text-center">
-          <p className="text-gray-400">&copy; 2024 christophel.io All rights reserved.</p>
+          <p className="text-gray-400">&copy; 2024 christophel.io</p>
         </div>
       </div>
     </footer>

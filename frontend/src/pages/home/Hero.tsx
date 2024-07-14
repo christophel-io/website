@@ -39,7 +39,7 @@ export function Hero() {
     const updateDimensions = () => {
       if (containerRef.current) {
         const { width, height } = containerRef.current!.getBoundingClientRect()
-        const aspectRatio = 16 / 9 // Desired aspect ratio
+        const aspectRatio = 16 / 9
         let newWidth = width
         let newHeight = height
         const newIsMobile = width < MOBILE_WIDTH
@@ -272,7 +272,7 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white"
         >
-          Accelerate Innovation with AI
+          Accelerate Innovation with AI.
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -290,17 +290,17 @@ export function Hero() {
           className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6"
         >
           <Link
-            to="/demo"
+            to="/contact"
             className="bg-blue-500 text-white px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-blue-600 transition-colors duration-300 text-base md:text-lg font-semibold"
           >
             Contact us
           </Link>
-          <Link
-            to="/whitepaper"
+          <a
+            href="#more"
             className="bg-transparent border-2 border-white text-white px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-white hover:text-blue-900 transition-colors duration-300 text-base md:text-lg font-semibold"
           >
             More
-          </Link>
+          </a>
         </motion.div>
       </div>
     </section>

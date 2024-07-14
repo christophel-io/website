@@ -14,6 +14,7 @@ const navItems: NavItem[] = [
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const isMobile = window.innerWidth < 1024 && !menuOpen
 
   return (
     <header className="absolute w-full z-50 py-6">
@@ -24,7 +25,17 @@ export function Header() {
           transition={{ duration: 0.8 }}
           className="flex items-center space-x-2"
         >
-          <span className="font-bold text-2xl text-white">christophel.io</span>
+          <span className="font-bold text-2xl text-white">
+            {!isMobile && (
+              <motion.span
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                christophel.io
+              </motion.span>
+            )}
+          </span>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -64,23 +75,17 @@ export function Header() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
-          className="md:hidden flex flex-col items-center space-y-6 py-4"
+          className="md:hidden flex flex-col items-end bg-[#444159] my-2 border-b-blue-950"
         >
           {navItems.map((item) => (
             <Link
               key={item.name}
               to={item.path}
-              className="text-white hover:text-blue-300 transition-colors duration-300"
+              className="text-white px-6 hover:bg-[#4e4b65] transition-colors duration-300 w-full py-4"
             >
               {item.name}
             </Link>
           ))}
-          <Link
-            to="/get-started"
-            className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-blue-100 transition-colors duration-300"
-          >
-            Get Started
-          </Link>
         </motion.div>
       )}
     </header>
