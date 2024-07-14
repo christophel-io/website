@@ -28,7 +28,7 @@ export function Contact() {
         <title>Contact Us - WebDev Co.</title>
         <meta
           name="description"
-          content="Get in touch with WebDev Co. for your web development and consulting needs. We're here to help bring your digital vision to life."
+          content="Get in touch with christophel.io - for your web development and consulting needs. We're here to help bring your digital vision to life."
         />
       </Helmet>
       <div className="bg-gray-100 py-16">

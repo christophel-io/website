@@ -1,36 +1,31 @@
 import { Helmet } from "react-helmet"
-import { Hero } from "../../components/Hero.tsx"
-import { Features } from "./Features.tsx"
-import { References } from "../references/References.tsx"
+import { Teaser } from "./Teaser.tsx"
+import { Hero } from "./Hero.tsx"
 
+const helmetData = {
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  name: "christophel.io",
+  url: "https://www.christophel.io",
+  description:
+    "Expert web development and consulting services, specializing in React, TypeScript, and modern web technologies.",
+}
 export function Home() {
-  const structuredData = {
-    "@context": "http://schema.org",
-    "@type": "WebSite",
-    name: "WebDev Co.",
-    url: "https://www.christophel.io",
-    description:
-      "Expert web development and consulting services, specializing in React, TypeScript, and modern web technologies.",
-  }
+
   return (
     <>
       <Helmet>
-        <title>WebDev Co. - Expert Web Development and Consulting Services</title>
+        <title>christophel.io - Expert Web Development and Consulting Services</title>
         <meta
           name="description"
-          content="Christophel.io. offers expert web development and consulting services, specializing in React, TypeScript, and modern web technologies."
+          content="Christophel.io. offers expert web development and consulting services, specializing in React, TypeScript, NestJS and modern web technologies."
         />
         <link rel="canonical" href="https://www.christophel.io" />
-        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+        <script type="application/ld+json">{JSON.stringify(helmetData)}</script>
       </Helmet>
       <div className="home">
-        <Hero
-          ctaText={"Get Started"}
-          subtitle={"Transforming Ideas into Powerful Web Solutions"}
-          title={"Web Development Excellence"}
-        />
-        <Features />
-        <References />
+        <Hero />
+        <Teaser />
       </div>
     </>
   )
