@@ -6,11 +6,11 @@ import { Contact } from "./pages/contact/Contact"
 
 const routes = [
   { path: "/", element: <Home /> },
-  { path: "/contact", element: <Contact /> }
-];
+  { path: "/contact", element: <Contact /> },
+]
 
 function AppRoutes() {
-  return useRoutes(routes);
+  return useRoutes(routes)
 }
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
         <Footer />
       </div>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -11,7 +11,6 @@ const helmetData = {
     "Expert web development and consulting services, specializing in React, TypeScript, and modern web technologies.",
 }
 export function Home() {
-
   return (
     <>
       <Helmet>
